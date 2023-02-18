@@ -1,11 +1,11 @@
 # Detecting Unexpected Obstacles 
 
-In this project I have trained 4 different networks for road segmentation, and then I have used the best network for detecting an unexpected obstacle on the road.
+In this project, I have trained 4 different networks for road segmentation, and then I have used the best network for detecting an unexpected obstacle on the road.
 i have used ```U-Net```, ```SegNet``` and ```DeepLabV3``` for the segmentation part of my project.
-Now i will show the architecture, training results, losses and outputs of each network and I will compare their results.
+Now I will show the architecture, training results, losses and outputs of each network and I will compare their results.
 
 ## Dataset
-I have used ```Cityscapes``` Dataset for training. I decreased the number of classes from 34 to 20. you can download my dataset from [here](https://drive.google.com/drive/folders/1WgF9UVW1UBMuE_tg3RNwZXp3vVoagNDK?usp=share_link). 
+I have used the ```Cityscapes``` Dataset for training. I decreased the number of classes from 34 to 20. you can download my dataset from [here](https://drive.google.com/drive/folders/1WgF9UVW1UBMuE_tg3RNwZXp3vVoagNDK?usp=share_link). 
 Here is a sample of an image and its corresponding mask:
 
 ![Data Set Sample](./assets/Dataset.png)
