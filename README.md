@@ -1,4 +1,4 @@
-# Detecting Unexpected Obstacles 
+# Semantic Segmentation on Cityscapes dataset
 
 In this project, I have trained 4 different networks for road segmentation, and then I have used the best network for detecting an unexpected obstacle on the road.
 i have used ```U-Net```, ```SegNet``` and ```DeepLabV3``` for the segmentation part of my project.
