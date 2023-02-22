@@ -245,3 +245,31 @@ In this table we can compare the final results of training each model:
 </table>
 
 According to the above results, I think ```DeepLabV3_ResNet_50``` is the best choice among these four networks, because of that we have to take into account the ```Number of Trainable Parameters``` for hardware implementation part.
+
+
+
+# Detecting Unexpected Obstacles on the road
+
+In the next part of the project, I Used the ```DeepLabV3_ResNet_50``` for detecting Unexpected Obstacles on the road.
+ In order to do that, first we have to give an image containing an Unexpected obstacle. I used [Fishyscapes](https://fishyscapes.com/dataset) Dataset.
+
+ here is a sample of the dataset:
+
+ ![image](./assets/Unexpected_Obstacles.png)
+
+ first we give the image to our model and then the model will predict a probability and a class number. For Detecting the unexpected obstacle, we have to find out which part of the input has the lowest logits, because the lowest logit means there might be a disturbance in that part of the image.
+ here is the result of the prediction of logits for each class :
+
+ ![logits](./assets/Prediction%20of%20each%20class%20from%20unexpected%20obstacles.png)
+
+ now by calculating ```argmax``` and ```max``` of each class, we will make following tensors:
+
+$$L_(h,w) = max F_(c,h,w) $$
+
+$$Y_(h,w) = argmax F_(c,h,w) $$
+
+Now by normalizing ```L``` tensor and plotting it we will see following picture:
+
+![SML](./assets/Detecting%20Unexpected%20Obstacle.png)
+
+You can see that the unexpected obstacle is highlighted. However you can give the ```SML``` image to a ```U-Net``` to make a more specific detection. 
